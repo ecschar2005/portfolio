@@ -159,7 +159,6 @@ p{
 /* Container holding the image and the text */
 .bright{
 	height:0px;
-	overflow: scroll;
 }
 
 
