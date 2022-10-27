@@ -6,6 +6,8 @@
 	border: none;
     font-family: 'Assistant', sans-serif;
     color: #463835;
+	overflow:scroll;
+            overflow-x:hidden;
 }
 
 #wrapper{
