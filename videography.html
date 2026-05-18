@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,600;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <title>SCHAR PORTFOLIO</title>
+    <link href="portstyle.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="menuBar">
+      <div class="menuIcon"><a href="portfolio.html">menu</a></div>
+      <nav class="hiddenMenu">
+        <a href="projects.html">projects</a>
+        <a href="videography.html">video</a>
+        <a href="resume.html">resume</a>
+        <a href="contact.html">contact</a>
+      </nav>
+    </div>
+
+    <div class="videoContainer">
+      <div class="videoLeft">
+        <p>videography content</p>
+        <p>a collection of shorts, reels, and long-form videos</p>
+      </div>
+      <div class="videoMiddle">
+        <video class="videoControl">
+          <source src="videos/borntobe.mp4" type="video/mp4" />
+          Your browser does not support the video type.
+        </video>
+        <video class="videoControl">
+          <source src="videos/kiss.mp4" type="video/mp4" />
+          Your browser does not support the video type.
+        </video>
+        <video class="videoControl">
+          <source src="videos/film.mp4" type="video/mp4" />
+          Your browser does not support the video type.
+        </video>
+        <video class="videoControl">
+          <source src="videos/missionstatement.mp4" type="video/mp4" />
+          Your browser does not support the video type.
+        </video>
+      </div>
+      <div class="videoRight">
+        <video class="videoControl">
+          <source src="videos/kkg.mp4" type="video/mp4" />
+          Your browser does not support the video type.
+        </video>
+        <video class="videoControl">
+          <source src="videos/ribs.mp4" type="video/mp4" />
+          Your browser does not support the video type.
+        </video>
+        <video class="videoControl">
+          <source src="videos/nnms.mp4" type="video/mp4" />
+          Your browser does not support the video type.
+        </video>
+        <video class="videoControl">
+          <source src="videos/gallery.mp4" type="video/mp4" />
+          Your browser does not support the video type.
+        </video>
+      </div>
+      <div class="largeRight">
+        <video class="videoControl">
+          <source src="videos/walkthru.mp4" type="video/mp4" />
+          Your browser does not support the video type.
+        </video>
+        <video class="videoControl">
+          <source src="videos/thither.mp4" type="video/mp4" />
+          Your browser does not support the video type.
+        </video>
+        <video class="videoControl">
+          <source src="videos/tina.mp4" type="video/mp4" />
+          Your browser does not support the video type.
+        </video>
+        <video class="videoControl">
+          <source src="videos/snow.mp4" type="video/mp4" />
+          Your browser does not support the video type.
+        </video>
+      </div>
+    </div>
+    <script>
+      const videos = document.getElementsByClassName("videoControl");
+
+      for (let i = 0; i < videos.length; i++) {
+        videos[i].addEventListener("mouseenter", () => {
+          videos[i].setAttribute("controls", "");
+        });
+
+        videos[i].addEventListener("mouseleave", () => {
+          videos[i].removeAttribute("controls");
+        });
+      }
+    </script>
+  </body>
+</html>
