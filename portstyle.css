@@ -119,7 +119,7 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
 }
 
@@ -214,7 +214,7 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 
@@ -270,7 +270,7 @@ a:hover {
   justify-content: center;
   align-items: center;
 
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
 
   padding-top: 4em;
@@ -291,7 +291,7 @@ a:hover {
   grid-template-columns: 0.8fr 2fr;
   gap: 2em;
 
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
 
   padding: 7em 2em 2em 2em;
@@ -405,13 +405,33 @@ a:hover {
 /* =========================
    MOBILE
 ========================= */
-
 @media (max-width: 830px) {
+  /* GLOBAL */
+
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a,
+  p,
+  div {
+    font-size: 16px;
+  }
+
   /* MENU */
 
   .menuBar {
     width: 100%;
-    gap: 1.5em;
+    gap: 1em;
+    flex-wrap: wrap;
 
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(4px);
@@ -426,12 +446,10 @@ a:hover {
 
   .mainContainer {
     display: flex;
-
     flex-direction: column;
 
     width: 100%;
-
-    min-height: 100vh;
+    min-height: auto;
   }
 
   .left,
@@ -441,74 +459,67 @@ a:hover {
   }
 
   .left {
-    padding-top: 7em;
-
-    padding-inline: 2em;
+    padding: 7em 2em 3em 2em;
+    text-align: center;
   }
 
   .middle img {
     width: 100%;
-
-    height: 40vh;
-
+    height: 45vh;
     object-fit: cover;
+    display: block;
   }
 
   .right {
-    padding: 3em 1em;
+    padding: 3em 1.5em;
   }
 
   /* VIDEO */
 
   .videoContainer {
-    grid-template-columns: 1fr;
-    padding-top: 6em;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 6em 1em 2em 1em;
   }
 
   .videoContainer video {
-    width: 75vw;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 1em;
   }
 
   .videoLeft,
   .videoMiddle,
   .videoRight,
   .largeRight {
-    justify-content: center;
-    align-items: center;
-  }
-
-  .videoLeft {
     position: relative;
     top: 0;
 
-    padding: 0 1em 1em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    order: 1;
-  }
+    width: 100%;
 
-  .videoMiddle {
-    order: 2;
-  }
-
-  .videoRight {
-    order: 3;
-  }
-
-  .largeRight {
-    order: 4;
-  }
-
-  .videoMiddle,
-  .videoRight,
-  .largeRight {
     padding-top: 0;
+    padding-left: 0;
+  }
+
+  .videoLeft {
+    text-align: center;
+    padding-bottom: 2em;
   }
 
   /* CONTACT */
 
   .contactContainer {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-height: 100vh;
 
     padding-top: 6em;
   }
@@ -521,7 +532,7 @@ a:hover {
   }
 
   .contactTitle {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .contactLeft p {
@@ -533,17 +544,23 @@ a:hover {
   }
 
   .contactRight {
-    height: 50vh;
+    width: 100%;
+    height: auto;
   }
 
   .contactRight img {
-    height: 55vh;
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
   }
 
   /* PROJECTS */
 
   .projectsContainer {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
 
     gap: 3em;
     padding: 6em 1em 2em 1em;
@@ -558,7 +575,7 @@ a:hover {
   }
 
   .projectsTitle {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .projectsText {
@@ -566,14 +583,26 @@ a:hover {
   }
 
   .projectsGallery {
+    display: grid;
     grid-template-columns: 1fr;
+
     gap: 2em;
+  }
+
+  .projectCard img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
   }
 
   /* RESUME */
 
+  .resumeContainer {
+    width: 100%;
+    padding-top: 6em;
+  }
+
   #resume {
     width: 95vw;
-    height: 85vh;
+    height: 80vh;
   }
 }
