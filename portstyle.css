@@ -425,24 +425,33 @@ a:hover {
   /* HOME */
 
   .mainContainer {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    min-height: 100vh;
   }
 
   .left,
   .middle,
   .right {
-    grid-column: 1 / -1;
+    width: 100%;
   }
 
   .left {
     padding-top: 7em;
+
     padding-inline: 2em;
   }
 
   .middle img {
     width: 100%;
+
     height: 40vh;
+
+    object-fit: cover;
   }
 
   .right {
@@ -566,19 +575,5 @@ a:hover {
   #resume {
     width: 95vw;
     height: 85vh;
-  }
-}
-
-/* =========================
-   DESKTOP
-========================= */
-
-@media (min-width: 831px) {
-  .mainContainer {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .videoContainer {
-    grid-template-columns: 0.8fr 1fr 1fr 1fr;
   }
 }
